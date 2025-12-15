@@ -17,6 +17,7 @@
     "@mui/material": "^7.3.6",
     "@tailwindcss/line-clamp": "^0.4.4",
     "framer-motion": "^12.23.24",
+    "gsap": "^3.14.2",
     "lucide-react": "^0.548.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
