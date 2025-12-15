@@ -22,7 +22,7 @@ const Message = () => {
                                 />
                             </div>
                             <h3 className="mt-4 text-[20px] sm:text-[22px] font-semibold text-black">Raj</h3>
-                            <p className="text-[#D07A17] text-[14px] sm:text-[16px] font-medium">Co-Founder</p>
+                            <p className="text-[#D07A17] text-[14px] sm:text-[16px] font-medium">Founder</p>
                         </div>
 
                         <div className="flex flex-col items-center">

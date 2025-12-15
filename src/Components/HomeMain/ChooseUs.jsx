@@ -29,7 +29,7 @@ const ChooseUs = () => {
                 "
               </span>
 
-              <span>
+              <span className="text-justify">
                 Arony Farms was built on a simple belief that land can yield
                 both prosperity and purpose. We're creating a new path where
                 investors and farmers thrive together, sustainably.
@@ -70,7 +70,7 @@ const ChooseUs = () => {
                 "
               </span>
 
-              <span>
+              <span className="text-justify">
                 Arony Farms was built on a simple belief that land can yield
                 both prosperity and purpose. We're creating a new path where
                 investors and farmers thrive together, sustainably.

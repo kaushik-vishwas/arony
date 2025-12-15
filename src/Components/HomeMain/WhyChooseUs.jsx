@@ -57,7 +57,7 @@ const WhyChooseUs = () => {
                 <div className="flex flex-col gap-4 sm:gap-6 md:gap-8">
                     <Badge label="Why Choose us?" className="justify-start" />
                     <Heading className="text-left">Difference We Create</Heading>
-                    <Description className="max-w-md text-left">
+                    <Description className="max-w-md text-left text-justify">
                         At Arony Farms, we believe farmland is more than just an investment, it's a lifestyle.
                         Our projects are carefully designed to blend natural beauty with modern comforts,
                         creating spaces where you can relax, rejuvenate, and reconnect with nature.

@@ -54,45 +54,39 @@ const NewKeyPillars = () => {
                     {pillars.map((pillar, index) => (
                         <div 
                             key={index}
-                            className="group h-72 cursor-pointer [perspective:1000px]"
+                            className="group h-72 cursor-pointer overflow-hidden rounded-xl relative"
                         >
-                            {/* Flip Card Container */}
-                            <div className="relative w-full h-full transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-                                
-                                {/* Front of Card - All cards start with #F8D8B4 */}
-                                <div className="absolute inset-0 rounded-xl shadow-lg flex flex-col items-center justify-center text-center p-6 [backface-visibility:hidden] bg-[#F8D8B4] text-[#A85A00]">
-                                    <img
-                                        src={pillar.icon}
-                                        alt={pillar.title}
-                                        className="w-12 h-12 mx-auto mb-4 object-contain"
-                                    />
-                                    <p className="font-bold text-lg mb-2">
-                                        {pillar.title}
-                                    </p>
-                                    <p className="text-sm leading-relaxed opacity-90">
-                                        {pillar.description}
-                                    </p>
-                                    <div className="absolute bottom-3 text-xs opacity-70">
-                                        Hover to flip
-                                    </div>
-                                </div>
+                            {/* Front Card Content */}
+                            <div className="absolute inset-0 bg-[#F8D8B4] rounded-xl shadow-lg flex flex-col items-center justify-center text-center p-6 transition-all duration-500 group-hover:opacity-0 group-hover:translate-y-[-20px] z-10 text-[#A85A00]">
+                                <img
+                                    src={pillar.icon}
+                                    alt={pillar.title}
+                                    className="w-12 h-12 mx-auto mb-4 object-contain"
+                                />
+                                <p className="font-bold text-lg mb-2">
+                                    {pillar.title}
+                                </p>
+                                <p className="text-sm leading-relaxed opacity-90">
+                                    {pillar.description}
+                                </p>
+                               
+                            </div>
 
-                                {/* Back of Card - ALL cards flip to #4BA625 */}
-                                <div className="absolute inset-0 rounded-xl shadow-lg flex flex-col items-center justify-center text-center p-6 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-[#4BA625] text-white">
-                                    <div className="mb-4">
-                                        <span className="text-xs font-semibold px-3 py-1 rounded-full bg-white/20">
-                                            Details
-                                        </span>
-                                    </div>
-                                    <p className="font-bold text-lg mb-3">
-                                        More Details
-                                    </p>
-                                    <p className="text-sm leading-relaxed opacity-90">
-                                        {pillar.backDescription}
-                                    </p>
-                                    <div className="absolute bottom-3 text-xs opacity-70">
-                                        {pillar.title}
-                                    </div>
+                            {/* Back Card Content - Slides up from bottom */}
+                            <div className="absolute inset-0 bg-[#4BA625] rounded-xl shadow-lg flex flex-col items-center justify-center text-center p-6 transition-all duration-500 transform translate-y-full group-hover:translate-y-0 text-white">
+                                <div className="mb-4">
+                                    <span className="text-xs font-semibold px-3 py-1 rounded-full bg-white/20">
+                                        Details
+                                    </span>
+                                </div>
+                                <p className="font-bold text-lg mb-3">
+                                    More Details
+                                </p>
+                                <p className="text-sm leading-relaxed opacity-90">
+                                    {pillar.backDescription}
+                                </p>
+                                <div className="absolute bottom-3 text-xs opacity-70">
+                                    {pillar.title}
                                 </div>
                             </div>
                         </div>

@@ -3,11 +3,14 @@ import { motion } from "framer-motion";
 import { Heading, Description, Section, SectionCol } from "../utils";
 import careerMain from '../../assets/NewChanges/careerMain.png';
 // Import additional images for slideshow
-import slide2 from '../../assets/NewChanges/careerMain.png'; // Replace with your actual image paths
+import slide1 from '../../assets/career1.jpg';
+import slide2 from '../../assets/career2.jpg';
+import slide3 from '../../assets/career3.jpg';
+import slide4 from '../../assets/career4.jpg';
 
 
 const Join = () => {
-  const images = [careerMain, slide2, slide2, slide2];
+  const images = [slide1, slide2, slide3, slide4];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const slideInterval = useRef(null);

@@ -28,7 +28,7 @@ const ProjectMango = () => {
     }, []);
     
 
-    const faagContent = "Hampi Highland is a naturally rich farmland surrounded by the historic charm of Hampi. The soil here supports excellent growth for both premium mango varieties and long term sandalwood cultivation. The farm is developed with water access, drip systems, and neat planning across every plot. With clean surroundings and a calm atmosphere, it offers a blend of farming value and peaceful living. Managed by experts, the farm ensures healthy plant growth, consistent care, and a rewarding farm investment for the future.";
+    const faagContent = "Hampi Highland is a naturally rich farmland surrounded by the historic charm of Hampi. The soil here supports excellent growth for both premium mango varieties and long term mango cultivation. The farm is developed with water access, drip systems, and neat planning across every plot. With clean surroundings and a calm atmosphere, it offers a blend of farming value and peaceful living. Managed by experts, the farm ensures healthy plant growth, consistent care, and a rewarding farm investment for the future.";
     
 
     return (

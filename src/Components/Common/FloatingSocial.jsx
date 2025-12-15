@@ -1,10 +1,5 @@
 import { useState } from "react";
-import {
-  FaWhatsapp,
-  FaInstagram,
-  FaFacebookF,
-  FaTwitter,
-} from "react-icons/fa";
+import { FaWhatsapp, FaPhone, FaFileAlt } from "react-icons/fa";
 
 const FloatingSocial = () => {
   const [open, setOpen] = useState(false);
@@ -24,7 +19,7 @@ const FloatingSocial = () => {
           open ? "rounded-xl" : "rounded-xl"
         }`}>
           
-          {/* Instagram - Top icon */}
+          {/* Draft/Quote - Top icon */}
           <div
             className={`transition-all duration-300 ${
               open
@@ -37,14 +32,14 @@ const FloatingSocial = () => {
             }`}>
               <a 
                 href="#" 
-                className="w-8 h-8 rounded-full bg-gradient-to-br from-pink-500 to-purple-600 flex items-center justify-center text-white hover:scale-110 transition-transform duration-200 shadow-lg hover:shadow-pink-500/30"
+                className="w-8 h-8 rounded-full bg-gradient-to-br from-orange-500 to-amber-600 flex items-center justify-center text-white hover:scale-110 transition-transform duration-200 shadow-lg hover:shadow-orange-500/30"
               >
-                <FaInstagram size={12} />
+                <FaFileAlt size={12} />
               </a>
             </div>
           </div>
 
-          {/* Facebook */}
+          {/* Call */}
           <div
             className={`transition-all duration-300 delay-75 ${
               open
@@ -57,25 +52,7 @@ const FloatingSocial = () => {
                 href="#" 
                 className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center text-white hover:scale-110 transition-transform duration-200 shadow-lg hover:shadow-blue-500/30"
               >
-                <FaFacebookF size={11} />
-              </a>
-            </div>
-          </div>
-
-          {/* Twitter */}
-          <div
-            className={`transition-all duration-300 delay-150 ${
-              open
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-6 pointer-events-none"
-            }`}
-          >
-            <div className="w-16 h-16 bg-gradient-to-br from-gray-900/90 to-gray-800/90 flex items-center justify-center border-b border-gray-700/30">
-              <a 
-                href="#" 
-                className="w-8 h-8 rounded-full bg-gradient-to-br from-sky-500 to-cyan-600 flex items-center justify-center text-white hover:scale-110 transition-transform duration-200 shadow-lg hover:shadow-cyan-500/30"
-              >
-                <FaTwitter size={11} />
+                <FaPhone size={11} />
               </a>
             </div>
           </div>

@@ -3,50 +3,64 @@ import approach1 from "../../assets/approach1.png";
 import approach2 from "../../assets/approach2.png";
 import approach3 from "../../assets/approach3.png";
 
-
 const Approach = () => {
-
   const features = [
     {
-      title: 'Precision farming',
-      description: 'We use data-driven insights and smart technology to help farmers monitor soil health.',
-      image: approach1
+      title: "Precision farming",
+      description:
+        "We use data-driven insights and smart technology to help farmers monitor soil health.",
+      image: approach1,
     },
     {
-      title: 'Sustainable irrigation',
-      description: 'Our advanced irrigation systems reduce water waste and support efficient crop hydration.',
-      image: approach2
+      title: "Sustainable irrigation",
+      description:
+        "Our advanced irrigation systems reduce water waste and support efficient crop hydration.",
+      image: approach2,
     },
     {
-      title: 'Supply chain support',
-      description: 'Smarter post-harvest logistics and digital tracking systems for fresher, better-quality products.',
-      image: approach3
-    }
+      title: "Supply chain support",
+      description:
+        "Smarter post-harvest logistics and digital tracking systems for fresher, better-quality products.",
+      image: approach3,
+    },
   ];
 
   return (
     <Section>
       <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-
+        {/* Left Content - Fixed text alignment */}
         <div className="space-y-6 lg:sticky lg:top-8">
           <Badge label="Our Approach" className="justify-start" />
-          <Heading className="text-start">Redefining farmland <br /> ownership for <br /> modern investors</Heading>
-          <Description className="text-start">
-            At Arony Farms, we deliver end-to-end <br /> farmland investment solutions, making land <br /> ownership seamless, secure, and profitable.
+          
+          <Heading className="text-start">
+            Redefining farmland ownership for modern investors
+          </Heading>
+          
+          {/* Removed hyphens-auto, kept only text-justify */}
+          <Description className="text-justify max-w-lg leading-relaxed">
+            At Arony Farms, we deliver end-to-end farmland investment
+            solutions, making land ownership seamless, secure, and profitable.
           </Description>
-          <Description className="text-start">
-            From soil preparation to harvest, our team <br /> handles everything while you enjoy <br /> transparent, tax-efficient returns from your <br /> natural asset.
+          
+          <Description className="text-justify max-w-lg leading-relaxed">
+            From soil preparation to harvest, our team handles everything while
+            you enjoy transparent, tax-efficient returns from your natural
+            asset.
           </Description>
-          <GreenButton label="Discover our solutions" className="bg-[#4BA625]" />
+          
+          <GreenButton
+            label="Discover our solutions"
+            className="bg-[#4BA625]"
+          />
         </div>
 
+        {/* Right Content - Image Carousel */}
         <div className="w-full overflow-x-auto scrollbar-hide mt-12 lg:mt-20">
           <div className="flex gap-4 sm:gap-6 pb-4 min-w-max">
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group flex-shrink-0 
-    w-64 sm:w-72 lg:w-[380px] xl:w-[420px] h-80 sm:h-96 lg:h-[450px]"
+                className="relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group flex-shrink-0 w-64 sm:w-72 lg:w-[380px] xl:w-[420px] h-80 sm:h-96 lg:h-[450px]"
               >
                 <img
                   src={feature.image}
@@ -63,7 +77,9 @@ const Approach = () => {
                   </div>
 
                   <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6 text-white space-y-2">
-                    <h3 className="text-[20px] font-semibold">{feature.title}</h3>
+                    <h3 className="text-[20px] font-semibold">
+                      {feature.title}
+                    </h3>
                     <p className="text-[14px] font-normal leading-relaxed">
                       {feature.description}
                     </p>
@@ -71,10 +87,8 @@ const Approach = () => {
                 </div>
               </div>
             ))}
-
           </div>
         </div>
-
       </div>
     </Section>
   );

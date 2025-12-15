@@ -43,7 +43,7 @@ const WhyUs = () => {
 
           <div className="text-left flex flex-col gap-4 sm:gap-6 md:gap-8">
             <Badge label="Why Us" />
-            <Heading className="text-white">Why Choose Arony<br />Sandalwood Farm?</Heading>
+            <Heading className="text-white">Why Choose Arony<br />Mango Farm?</Heading>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">

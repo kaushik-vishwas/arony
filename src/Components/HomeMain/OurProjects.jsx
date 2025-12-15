@@ -23,7 +23,7 @@ const OurProjects = () => {
         {
             title: "The Maland Mist",
             image: projectThree,
-            desc: "Arony Coffee Farm offers investors a rare opportunity to own and profit from managed coffee cultivation in India's most sought-after agroforestry corridor.",
+            desc: "Arony Coffee Farm provides a unique opportunity to benefit from premium coffee cultivation, combining shade-grown plantations with sustainable, ecosystem-driven agroforestry practices.",
             route: "/project-coffee-malnad-mist" // This will redirect to project-coffee-malnad-mist page
         },
     ];
