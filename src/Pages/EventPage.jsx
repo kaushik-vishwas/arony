@@ -5,9 +5,9 @@ import Navbar from "../Components/AboutUs/Navbar";
 // Import all images
 import event1 from "../assets/event1.jpg";
 import event2 from "../assets/event2.jpg";
-import e1 from "../assets/e1.jpg";
-import e2 from "../assets/e2.jpg";
-// import e3 from "../assets/e3.jpg";
+import e1 from "../assets/e1.JPG";
+import e2 from "../assets/e2.JPG";
+import e3 from "../assets/e3.JPG";
 import e4 from "../assets/e4.jpg";
 import e5 from "../assets/e5.jpg";
 import e6 from "../assets/e6.jpeg";
@@ -77,7 +77,7 @@ const EventsSection = () => {
             </div>
 
             {/* Row 2 */}
-            {/* <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-white h-full">
+            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-white h-full">
               <div className="h-full overflow-hidden">
                 <img 
                   src={e3} 
@@ -86,7 +86,7 @@ const EventsSection = () => {
                 />
               </div>
               
-            </div> */}
+            </div>
 
             <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-white h-full">
               <div className="h-full overflow-hidden">
