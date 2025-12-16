@@ -1,98 +1,182 @@
 import React from "react";
 import Footer from "../Components/Common/Footer";
 import Navbar from "../Components/AboutUs/Navbar";
+
+// Import all images
 import event1 from "../assets/event1.jpg";
 import event2 from "../assets/event2.jpg";
-import event3 from "../assets/event3.jpg";
-
-const events = [
-  {
-    title: "Farm Launch Event",
-    theme: "Theme - Arony Farm - Sandalwood Farm",
-    description:
-      "Lorem ipsum dolor sit amet consectetur. Tellus eget nisi donec lorem ipsum nulla suspendisse. Tempor neque porttitor leo volutpat fusce nunc turpis pretium nulla. Pellentesque amet senectus faucibus nam auctor. Felis sed vel in gravida.",
-    button: "View Event",
-    image: event1,
-    reverse: false,
-  },
-  {
-    title: "Coffee – Interactive 3D Booking",
-    theme: "",
-    description:
-      "Lorem ipsum dolor sit amet consectetur. Tellus eget nisi donec lorem ipsum nulla suspendisse. Tempor neque porttitor leo volutpat fusce nunc turpis pretium nulla. Pellentesque amet senectus faucibus nam auctor. Felis sed vel in gravida.",
-    button: "View Interactive Map",
-    image: event2,
-    reverse: true,
-  },
-  {
-    title: "Seasonal Harvest Festival",
-    theme: "Theme - Autumn Harvest Celebration",
-    description:
-      "Experience the bounty of nature at our annual harvest festival. Enjoy farm-fresh produce, cooking demonstrations, live music, and family-friendly activities amidst the scenic beauty of Arony Farm. A perfect weekend getaway to connect with nature.",
-    button: "Learn More",
-    image: event3,
-    reverse: false,
-  },
-];
+import e1 from "../assets/e1.jpg";
+import e2 from "../assets/e2.jpg";
+import e3 from "../assets/e3.jpg";
+import e4 from "../assets/e4.jpg";
+import e5 from "../assets/e5.jpg";
+import e6 from "../assets/e6.jpeg";
+import e7 from "../assets/e7.jpeg";
+import e8 from "../assets/e8.jpeg";
+import e9 from "../assets/e9.jpg";
+import e10 from "../assets/e10.jpeg";
 
 const EventsSection = () => {
   return (
     <>
       <Navbar />
       
-      <section className="bg-white py-20">
-        <div className="max-w-7xl mx-auto px-4">
-          {/* Heading */}
-          <div className="text-center mb-14">
-            <p className="text-sm text-gray-500 mb-2">
-              Crafted Moments in Nature's Embrace
+      <section className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Header Section */}
+          <div className="text-center mb-16">
+            <div className="inline-block px-4 py-1.5 bg-gradient-to-r from-green-50 to-emerald-50 rounded-full mb-6 border border-green-100">
+              <span className="text-sm font-semibold text-green-800 tracking-wide">
+                GALLERY COLLECTION
+              </span>
+            </div>
+            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-600">
+                Event Gallery
+              </span>
+            </h1>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              A curated collection of memorable moments from our events at Arony Farm
             </p>
-            <h2 className="text-3xl font-semibold text-gray-900">
-              <span className="text-green-600">•</span> Events at Arony
-            </h2>
           </div>
 
-          {/* Cards */}
-          <div className="space-y-16">
-            {events.map((item, index) => (
-              <div
-                key={index}
-                className={`flex flex-col md:flex-row bg-gray-50 rounded-xl overflow-hidden shadow-sm ${
-                  item.reverse ? "md:flex-row-reverse" : ""
-                }`}
-              >
-                {/* Image Container with Fixed Height */}
-                <div className="md:w-1/2 h-64 md:h-96"> {/* Fixed height for all images */}
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-
-                {/* Content */}
-                <div className="md:w-1/2 p-6 flex flex-col justify-center">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                    {item.title}
-                  </h3>
-
-                  {item.theme && (
-                    <p className="text-sm text-gray-500 mb-4">{item.theme}</p>
-                  )}
-
-                  <p className="text-gray-600 text-sm leading-relaxed mb-6">
-                    {item.description}
-                  </p>
-
-                  <div>
-                    <button className="inline-flex items-center gap-2 rounded-full bg-green-600 px-6 py-2 text-sm font-medium text-white transition hover:bg-green-700">
-                      {item.button}
-                      <span>→</span>
-                    </button>
-                  </div>
-                </div>
+          {/* Event Grid - 3 columns with full height images */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+            
+            {/* Row 1 */}
+            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-white h-full">
+              <div className="h-full overflow-hidden">
+                <img 
+                  src={event1} 
+                  alt="Event 1" 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
               </div>
-            ))}
+            </div>
+
+            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-white h-full">
+              <div className="h-full overflow-hidden">
+                <img 
+                  src={e1} 
+                  alt="Event" 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+              </div>
+              
+            </div>
+
+            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-white h-full">
+              <div className="h-full overflow-hidden">
+                <img 
+                  src={e2} 
+                  alt="Event" 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+              </div>
+              
+            </div>
+
+            {/* Row 2 */}
+            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-white h-full">
+              <div className="h-full overflow-hidden">
+                <img 
+                  src={e3} 
+                  alt="Event" 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+              </div>
+              
+            </div>
+
+            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-white h-full">
+              <div className="h-full overflow-hidden">
+                <img 
+                  src={e4} 
+                  alt="Event" 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+              </div>
+              
+            </div>
+
+            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-white h-full">
+              <div className="h-full overflow-hidden">
+                <img 
+                  src={e5} 
+                  alt="Event" 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+              </div>
+              
+            </div>
+
+            {/* Row 3 */}
+            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-white h-full">
+              <div className="h-full overflow-hidden">
+                <img 
+                  src={e6} 
+                  alt="Event" 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+              </div>
+              
+            </div>
+
+            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-white h-full">
+              <div className="h-full overflow-hidden">
+                <img 
+                  src={e7} 
+                  alt="Event" 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+              </div>
+              
+            </div>
+
+            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-white h-full">
+              <div className="h-full overflow-hidden">
+                <img 
+                  src={e8} 
+                  alt="Event" 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+              </div>
+              
+            </div>
+
+            {/* Row 4 */}
+            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-white h-full">
+              <div className="h-full overflow-hidden">
+                <img 
+                  src={e9} 
+                  alt="Event" 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+              </div>
+              
+            </div>
+
+            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-white h-full">
+              <div className="h-full overflow-hidden">
+                <img 
+                  src={e10} 
+                  alt="Event" 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+              </div>
+              
+            </div>
+
+            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-white h-full">
+              <div className="h-full overflow-hidden">
+                <img 
+                  src={event1} 
+                  alt="Event" 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+              </div>
+              
+            </div>
           </div>
         </div>
       </section>

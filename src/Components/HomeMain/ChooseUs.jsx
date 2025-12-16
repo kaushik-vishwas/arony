@@ -19,7 +19,6 @@ const ChooseUs = () => {
 
         <div
           className="relative md:w-[60%] w-full md:aspect-[4/3] bg-cover bg-center p-6 md:p-0 lg-p-0"
-          style={{ backgroundImage: `url(${sideImage})` }}
         >
           <div className="absolute inset-0 bg-black/40" />
 
@@ -30,9 +29,7 @@ const ChooseUs = () => {
               </span>
 
               <span className="text-justify">
-                Arony Farms was built on a simple belief that land can yield
-                both prosperity and purpose. We're creating a new path where
-                investors and farmers thrive together, sustainably.
+               We started Arony to protect the land, grow responsibly, and help people invest in nature without harming it. Arony exists to prove that farming can be profitable while still respecting soil, water, and the environment it’s a commitment to nurture the land and pass it on healthier to the next generation My vision is to create farmlands that breathe, grow, and sustain life—while offering meaningful, long-term value to our investors.
               </span>
             </p>
 
@@ -60,7 +57,7 @@ const ChooseUs = () => {
 
         <div
           className="relative md:w-[60%] w-full md:aspect-[4/3] bg-cover bg-center p-6 md:p-0 lg-p-0"
-          style={{ backgroundImage: `url(${sideImageTwo})` }}
+         
         >
           <div className="absolute inset-0 bg-black/40" />
 
@@ -71,9 +68,8 @@ const ChooseUs = () => {
               </span>
 
               <span className="text-justify">
-                Arony Farms was built on a simple belief that land can yield
-                both prosperity and purpose. We're creating a new path where
-                investors and farmers thrive together, sustainably.
+               We started Arony to help people reconnect with nature while building long-term, secure wealth through agriculture
+Our goal is to make farmland ownership simple, sustainable, and rewarding—so investors can grow with the land, not worry about managing it For me, agriculture is a legacy. Through managed farmland, we create value for investors, farmers, and the environment together
               </span>
             </p>
 

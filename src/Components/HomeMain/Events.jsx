@@ -5,9 +5,7 @@ import { useNavigate } from "react-router-dom";
 import event1 from "../../assets/event1.jpg";
 import event2 from "../../assets/event2.jpg";
 import event3 from "../../assets/event3.jpg";
-
 import event4 from "../../assets/ownership4.png";
-
 
 export default function EventSection() {
   const navigate = useNavigate();
@@ -75,21 +73,21 @@ export default function EventSection() {
       </motion.div>
 
       <motion.div 
-        className="grid lg:grid-cols-2 gap-10 items-center"
+        className="grid lg:grid-cols-2 gap-8 lg:gap-12"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
       >
-        {/* Left: Large Image */}
+        {/* Left: Large Image - Full height container */}
         <motion.div 
-          className="w-full h-[350px] md:h-[420px] overflow-hidden rounded-xl shadow-md"
+          className="lg:h-[600px] h-[400px]"
           variants={imageVariants}
         >
           <motion.img
             src={event4}
             alt="Event Audience"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover rounded-xl shadow-lg"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.4 }}
           />
@@ -97,7 +95,7 @@ export default function EventSection() {
 
         {/* Right: Event Content */}
         <motion.div 
-          className="space-y-6"
+          className="flex flex-col justify-center space-y-6"
           variants={containerVariants}
         >
           <motion.h2 
@@ -138,7 +136,7 @@ export default function EventSection() {
           <motion.button 
             variants={itemVariants}
             onClick={handleViewEvent}
-            className="px-6 py-3 bg-green-800 text-white rounded-lg shadow hover:bg-green-900 transition"
+            className="px-6 py-3 bg-green-800 text-white rounded-lg shadow hover:bg-green-900 transition w-fit"
             whileHover={{ 
               scale: 1.05,
               boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1)"
@@ -150,7 +148,7 @@ export default function EventSection() {
         </motion.div>
       </motion.div>
 
-      {/* Bottom: Event Cards */}
+      {/* Bottom: Event Cards - Images only, no text labels */}
       <motion.div 
         className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-16"
         variants={containerVariants}
@@ -158,61 +156,46 @@ export default function EventSection() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
       >
-        {/* Card 1 */}
+        {/* Card 1 - Image only */}
         <motion.div 
-          className="rounded-xl overflow-hidden shadow bg-white cursor-pointer group"
+          className="rounded-xl overflow-hidden shadow cursor-pointer group"
           variants={cardVariants}
           whileHover="hover"
           onClick={handleViewEvent}
         >
-          <div className="overflow-hidden">
-            <motion.img 
-              src={event1} 
-              className="w-full h-48 object-cover group-hover:scale-110 transition duration-500"
-              alt="Farm Launch Event"
-            />
-          </div>
-          <div className="p-4 font-medium text-gray-800">
-            Farm Launch Event
-          </div>
+          <motion.img 
+            src={event1} 
+            className="w-full h-64 object-cover group-hover:scale-110 transition duration-500"
+            alt="Farm Launch Event"
+          />
         </motion.div>
 
-        {/* Card 2 */}
+        {/* Card 2 - Image only */}
         <motion.div 
-          className="rounded-xl overflow-hidden shadow bg-white cursor-pointer group"
+          className="rounded-xl overflow-hidden shadow cursor-pointer group"
           variants={cardVariants}
           whileHover="hover"
           onClick={handleViewEvent}
         >
-          <div className="overflow-hidden">
-            <motion.img 
-              src={event2}
-              className="w-full h-48 object-cover group-hover:scale-110 transition duration-500"
-              alt="Coffee - Interactive 3D Booking"
-            />
-          </div>
-          <div className="p-4 font-medium text-gray-800">
-            Coffee - Interactive 3D Booking
-          </div>
+          <motion.img 
+            src={event2}
+            className="w-full h-64 object-cover group-hover:scale-110 transition duration-500"
+            alt="Coffee - Interactive 3D Booking"
+          />
         </motion.div>
 
-        {/* Card 3 */}
+        {/* Card 3 - Image only */}
         <motion.div 
-          className="rounded-xl overflow-hidden shadow bg-white cursor-pointer group"
+          className="rounded-xl overflow-hidden shadow cursor-pointer group"
           variants={cardVariants}
           whileHover="hover"
           onClick={handleViewEvent}
         >
-          <div className="overflow-hidden">
-            <motion.img 
-              src={event3}
-              className="w-full h-48 object-cover group-hover:scale-110 transition duration-500"
-              alt="Introducing - Coffee Farm"
-            />
-          </div>
-          <div className="p-4 font-medium text-gray-800">
-            Introducing - Coffee Farm
-          </div>
+          <motion.img 
+            src={event3}
+            className="w-full h-64 object-cover group-hover:scale-110 transition duration-500"
+            alt="Introducing - Coffee Farm"
+          />
         </motion.div>
       </motion.div>
     </section>

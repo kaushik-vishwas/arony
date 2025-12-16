@@ -1,16 +1,24 @@
 import { useState, useEffect, useRef } from "react";
-import testimonial1 from "../../assets/Man.png";
-import testimonial2 from "../../assets/Man.png";
-import testimonial3 from "../../assets/Man.png";
-import testimonial4 from "../../assets/Man.png";
-import testimonial5 from "../../assets/Man.png";
-import testimonial6 from "../../assets/Man.png";
+import testimonial1 from "../../assets/testi-thumb.png";
+import testimonial2 from "../../assets/testi-thumb.png";
+import testimonial3 from "../../assets/testi-thumb.png";
+import testimonial4 from "../../assets/testi-thumb.png";
+import testimonial5 from "../../assets/testi-thumb.png";
+import testimonial6 from "../../assets/testi-thumb.png";
 import { Heading, Section, SectionCol, Badge } from "../utils";
+
+// Import a video file - add your video to assets and update this path
+import testimonialVideo from "../../assets/testimony.mp4";
+// If using external video URL:
+// const videoUrl = "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
 
 const Testimonials = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [isPaused, setIsPaused] = useState(false);
+    const [showVideoModal, setShowVideoModal] = useState(false);
+    const [isVideoPlaying, setIsVideoPlaying] = useState(false);
     const autoSlideRef = useRef(null);
+    const videoRef = useRef(null);
     
     const testimonials = [
         {
@@ -18,53 +26,98 @@ const Testimonials = () => {
             image: testimonial1,
             name: "Amit Sharma",
             role: "Sandalwood Farm Owner",
-            bgColor: "bg-blue-400"
+            bgColor: "bg-blue-400",
+            quote: "Arony Farms transformed my vision of sustainable farming into reality."
         },
         {
             id: 2,
             image: testimonial2,
             name: "Rajesh Kumar",
             role: "Organic Farm Owner",
-            bgColor: "bg-green-600"
+            bgColor: "bg-green-600",
+            quote: "The managed farmland approach gave me financial security and peace."
         },
         {
             id: 3,
             image: testimonial3,
             name: "Priya Patel",
             role: "Tea Plantation Owner",
-            bgColor: "bg-amber-700"
+            bgColor: "bg-amber-700",
+            quote: "A legacy I can pass down to future generations."
         },
         {
             id: 4,
             image: testimonial4,
             name: "Vikram Singh",
             role: "Spice Farm Owner",
-            bgColor: "bg-green-700"
+            bgColor: "bg-green-700",
+            quote: "More than investment, it's a connection with nature."
         },
         {
             id: 5,
             image: testimonial5,
             name: "Neha Gupta",
             role: "Floriculture Owner",
-            bgColor: "bg-purple-600"
+            bgColor: "bg-purple-600",
+            quote: "Sustainable living at its best with Arony Farms."
         },
         {
             id: 6,
             image: testimonial6,
             name: "Sunil Reddy",
             role: "Coffee Estate Owner",
-            bgColor: "bg-red-600"
+            bgColor: "bg-red-600",
+            quote: "Creating green legacy while building wealth."
         }
     ];
 
     // Calculate total slides based on 3 cards per view
-    const totalSlides = Math.max(0, testimonials.length - 3); // Show 3 cards at a time
+    const totalSlides = Math.max(0, testimonials.length - 3);
 
-    // Handle next slide with infinite loop
+    // Handle video play
+    const handlePlayVideo = () => {
+        setShowVideoModal(true);
+        // Small delay to ensure modal is rendered
+        setTimeout(() => {
+            if (videoRef.current) {
+                videoRef.current.play();
+                setIsVideoPlaying(true);
+            }
+        }, 100);
+    };
+
+    // Handle video pause/close
+    const handleCloseVideo = () => {
+        if (videoRef.current) {
+            videoRef.current.pause();
+            videoRef.current.currentTime = 0;
+            setIsVideoPlaying(false);
+        }
+        setShowVideoModal(false);
+    };
+
+    // Handle video ended
+    const handleVideoEnded = () => {
+        setIsVideoPlaying(false);
+    };
+
+    // Close modal on escape key
+    useEffect(() => {
+        const handleEscKey = (e) => {
+            if (e.key === 'Escape' && showVideoModal) {
+                handleCloseVideo();
+            }
+        };
+
+        window.addEventListener('keydown', handleEscKey);
+        return () => window.removeEventListener('keydown', handleEscKey);
+    }, [showVideoModal]);
+
+    // Handle next slide
     const nextSlide = () => {
         setCurrentSlide(prev => {
             if (prev >= totalSlides) {
-                return 0; // Loop back to first slide
+                return 0;
             } else {
                 return prev + 1;
             }
@@ -72,11 +125,11 @@ const Testimonials = () => {
         resetAutoSlide();
     };
 
-    // Handle previous slide with infinite loop
+    // Handle previous slide
     const prevSlide = () => {
         setCurrentSlide(prev => {
             if (prev <= 0) {
-                return totalSlides; // Loop to last slide
+                return totalSlides;
             } else {
                 return prev - 1;
             }
@@ -102,13 +155,13 @@ const Testimonials = () => {
             if (!isPaused) {
                 setCurrentSlide(prev => {
                     if (prev >= totalSlides) {
-                        return 0; // Loop back to first slide
+                        return 0;
                     } else {
                         return prev + 1;
                     }
                 });
             }
-        }, 3000); // 3 second interval
+        }, 3000);
     };
 
     // Reset auto-slide timer
@@ -136,136 +189,191 @@ const Testimonials = () => {
     // Calculate transform for 3-card view
     const transformValue = `translateX(-${currentSlide * (100 / 3)}%)`;
 
-    // Initialize auto-slide on component mount
+    // Initialize auto-slide
     useEffect(() => {
         startAutoSlide();
         
-        // Cleanup on unmount
         return () => {
             if (autoSlideRef.current) {
                 clearInterval(autoSlideRef.current);
             }
         };
-    }, [isPaused]); // Re-run when isPaused changes
+    }, [isPaused]);
 
     return (
-        <Section>
-            <SectionCol>
-                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 sm:mb-6 lg:mb-8 gap-4 sm:gap-6 md:gap-8">
-                    <div className='flex flex-col items-start justify-start gap-2'>
-                        <Badge label="Watch Our Testimonials" className="justify-start" />
-                        <Heading>Check out our testimonial <br /> videos, Trusted by landowners</Heading>
-                    </div>
+        <>
+            <Section>
+                <SectionCol>
+                    <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 sm:mb-6 lg:mb-8 gap-4 sm:gap-6 md:gap-8">
+                        <div className='flex flex-col items-start justify-start gap-2'>
+                            <Badge label="Watch Our Testimonials" className="justify-start" />
+                            <Heading>Check out our testimonial <br /> videos, Trusted by landowners</Heading>
+                        </div>
 
-                    <div className="flex items-center gap-3">
-                        <button 
-                            onClick={prevSlide}
-                            className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-gray-300 flex items-center justify-center hover:border-green-600 hover:text-green-600 transition-colors"
-                        >
-                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                            </svg>
-                        </button>
-                        
-                        <button 
-                            onClick={nextSlide}
-                            className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-gray-300 flex items-center justify-center hover:border-green-600 hover:text-green-600 transition-colors"
-                        >
-                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-
-                <div 
-                    className="relative overflow-hidden px-4"
-                    onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave}
-                >
-                    {/* Slides Container */}
-                    <div className="overflow-visible">
-                        <div 
-                            className="flex transition-transform duration-500 ease-in-out"
-                            style={{ transform: transformValue }}
-                        >
-                            {testimonials.map((testimonial) => (
-                                <div 
-                                    key={testimonial.id} 
-                                    className="flex-shrink-0 w-1/3 px-3"
-                                >
-                                    <div className={`relative ${testimonial.bgColor} rounded-3xl overflow-hidden h-[300px] group cursor-pointer transition-transform duration-300 hover:scale-[1.02]`}>
-                                        {/* Background Image */}
-                                        <img
-                                            src={testimonial.image}
-                                            alt={testimonial.name}
-                                            className="w-full h-full object-cover"
-                                        />
-
-                                        {/* Gradient Overlay */}
-                                        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/70"></div>
-
-                                        {/* Top Left - Expand Button */}
-                                        <button className="absolute top-4 left-4 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
-                                            <svg className="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
-                                            </svg>
-                                        </button>
-
-                                        {/* Top Right - Sound Button */}
-                                        <button className="absolute top-4 right-4 w-10 h-10 bg-green-600 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
-                                            <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z" />
-                                            </svg>
-                                        </button>
-
-                                        {/* Center - Play Button */}
-                                        <button className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform">
-                                            <svg className="w-7 h-7 text-gray-900 ml-1" fill="currentColor" viewBox="0 0 24 24">
-                                                <path d="M8 5v14l11-7z" />
-                                            </svg>
-                                        </button>
-
-                                        {/* Bottom - User Info */}
-                                        <div className="absolute bottom-0 left-0 right-0 p-6">
-                                            <div className="flex items-center gap-3">
-                                                <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-white">
-                                                    <img
-                                                        src={testimonial.image}
-                                                        alt={testimonial.name}
-                                                        className="w-full h-full object-cover"
-                                                    />
-                                                </div>
-                                                <div>
-                                                    <h3 className="text-white font-bold text-lg">{testimonial.name}</h3>
-                                                    <p className="text-white/90 text-sm">{testimonial.role}</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
+                        <div className="flex items-center gap-3">
+                            <button 
+                                onClick={prevSlide}
+                                className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-gray-300 flex items-center justify-center hover:border-green-600 hover:text-green-600 transition-colors"
+                            >
+                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                                </svg>
+                            </button>
+                            
+                            <button 
+                                onClick={nextSlide}
+                                className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-gray-300 flex items-center justify-center hover:border-green-600 hover:text-green-600 transition-colors"
+                            >
+                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                </svg>
+                            </button>
                         </div>
                     </div>
 
-                    {/* Dots Indicator */}
-                    <div className="flex justify-center items-center gap-2 mt-8">
-                        {Array.from({ length: totalSlides + 1 }).map((_, index) => (
-                            <button
-                                key={index}
-                                onClick={() => goToSlide(index)}
-                                className={`h-2 rounded-full transition-all duration-300 ${
-                                    index === currentSlide 
-                                        ? 'w-8 bg-green-600' 
-                                        : 'w-3 bg-gray-300 hover:bg-gray-400'
-                                }`}
-                                aria-label={`Go to slide group ${index + 1}`}
-                            />
-                        ))}
+                    <div 
+                        className="relative overflow-hidden px-4"
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}
+                    >
+                        {/* Slides Container */}
+                        <div className="overflow-visible">
+                            <div 
+                                className="flex transition-transform duration-500 ease-in-out"
+                                style={{ transform: transformValue }}
+                            >
+                                {testimonials.map((testimonial) => (
+                                    <div 
+                                        key={testimonial.id} 
+                                        className="flex-shrink-0 w-1/3 px-3"
+                                    >
+                                        <div className={`relative ${testimonial.bgColor} rounded-3xl overflow-hidden h-[300px] group cursor-pointer transition-all duration-300 hover:scale-[1.02]`}>
+                                            {/* Background Image */}
+                                            <img
+                                                src={testimonial.image}
+                                                alt={testimonial.name}
+                                                className="w-full h-full object-cover"
+                                            />
+
+                                            {/* Gradient Overlay */}
+                                            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/70"></div>
+
+                                            {/* Top Left - Quote Icon */}
+                                            <button className="absolute top-4 left-4 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform backdrop-blur-sm">
+                                                <svg className="w-5 h-5 text-gray-700" fill="currentColor" viewBox="0 0 24 24">
+                                                    <path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z" />
+                                                </svg>
+                                            </button>
+
+                                            {/* Top Right - Play Indicator */}
+                                            <div className="absolute top-4 right-4 w-10 h-10 bg-green-600 rounded-full flex items-center justify-center shadow-lg">
+                                                <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                                    <path d="M8 5v14l11-7z" />
+                                                </svg>
+                                            </div>
+
+                                            {/* Center - Play Button */}
+                                            <button 
+                                                onClick={handlePlayVideo}
+                                                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform group"
+                                            >
+                                                <svg className="w-7 h-7 text-gray-900 ml-1 group-hover:text-green-600 transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                                                    <path d="M8 5v14l11-7z" />
+                                                </svg>
+                                            </button>
+
+                                            {/* Bottom - User Info */}
+                                            <div className="absolute bottom-0 left-0 right-0 p-6">
+                                                <div className="flex items-center gap-3">
+                                                    <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-white">
+                                                        <img
+                                                            src={testimonial.image}
+                                                            alt={testimonial.name}
+                                                            className="w-full h-full object-cover"
+                                                        />
+                                                    </div>
+                                                    <div>
+                                                        <h3 className="text-white font-bold text-lg">{testimonial.name}</h3>
+                                                        <p className="text-white/90 text-sm">{testimonial.role}</p>
+                                                    </div>
+                                                </div>
+                                                <p className="text-white/80 text-sm mt-3 italic">"{testimonial.quote}"</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Dots Indicator */}
+                        <div className="flex justify-center items-center gap-2 mt-8">
+                            {Array.from({ length: totalSlides + 1 }).map((_, index) => (
+                                <button
+                                    key={index}
+                                    onClick={() => goToSlide(index)}
+                                    className={`h-2 rounded-full transition-all duration-300 ${
+                                        index === currentSlide 
+                                            ? 'w-8 bg-green-600' 
+                                            : 'w-3 bg-gray-300 hover:bg-gray-400'
+                                    }`}
+                                    aria-label={`Go to slide group ${index + 1}`}
+                                />
+                            ))}
+                        </div>
+                    </div>
+                </SectionCol>
+            </Section>
+
+            {/* Video Modal */}
+            {showVideoModal && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm">
+                    <div className="relative w-full max-w-4xl mx-4">
+                        {/* Close Button */}
+                        <button
+                            onClick={handleCloseVideo}
+                            className="absolute -top-12 right-0 w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors z-10"
+                        >
+                            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+
+                        {/* Video Container */}
+                        <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                            <video
+                                ref={videoRef}
+                                className="w-full h-auto max-h-[80vh] object-contain"
+                                controls
+                                autoPlay
+                                onEnded={handleVideoEnded}
+                                onClick={(e) => e.stopPropagation()}
+                            >
+                                <source src={testimonialVideo} type="video/mp4" />
+                                Your browser does not support the video tag.
+                            </video>
+                            
+                            {/* Custom Controls Overlay */}
+                            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                                <div className="flex items-center justify-between">
+                                    <div className="text-white">
+                                        <h3 className="font-bold">Arony Farms Testimonials</h3>
+                                        <p className="text-sm text-white/80">Hear from our landowners</p>
+                                    </div>
+                                    <button
+                                        onClick={handleCloseVideo}
+                                        className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
+                                    >
+                                        Close
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                       
                     </div>
                 </div>
-            </SectionCol>
-        </Section>
+            )}
+        </>
     );
 };
 
