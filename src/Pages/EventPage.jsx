@@ -4,7 +4,6 @@ import Navbar from "../Components/AboutUs/Navbar";
 
 // Import all images
 import event1 from "../assets/event1.jpg";
-import event2 from "../assets/event2.jpg";
 import e1 from "../assets/e1.JPG";
 import e2 from "../assets/e2.JPG";
 import e3 from "../assets/e3.JPG";
@@ -43,21 +42,12 @@ const EventsSection = () => {
           {/* Event Grid - 3 columns with full height images */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
             
-            {/* Row 1 */}
-            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-white h-full">
-              <div className="h-full overflow-hidden">
-                <img 
-                  src={event1} 
-                  alt="Event 1" 
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-              </div>
-            </div>
+          
 
             <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-white h-full">
               <div className="h-full overflow-hidden">
                 <img 
-                  src={e1} 
+                  src={e6} 
                   alt="Event" 
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
@@ -114,7 +104,7 @@ const EventsSection = () => {
             <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-white h-full">
               <div className="h-full overflow-hidden">
                 <img 
-                  src={e6} 
+                  src={e1} 
                   alt="Event" 
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
