@@ -2,10 +2,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
-import event1 from "../../assets/event1.jpg";
-import event2 from "../../assets/event2.jpg";
-import event3 from "../../assets/event3.jpg";
-import event4 from "../../assets/ownership4.png";
+import event1 from "../../assets/e1.jpg";
+import event2 from "../../assets/e11.jpeg";
+import event3 from "../../assets/e3.jpg";
+import event4 from "../../assets/e9.jpeg";
 
 export default function EventSection() {
   const navigate = useNavigate();

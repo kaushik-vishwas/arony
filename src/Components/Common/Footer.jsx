@@ -173,7 +173,7 @@ import { ArrowUp } from 'lucide-react';
 import youtube from '../../assets/youtube.png';
 import instagram from '../../assets/instagram.png';
 import facebook from '../../assets/facebook.png';
-import logo from '../../assets/logoFooter.png';
+import logo from '../../assets/logo2.png';
 
 const Footer = () => {
   const footerRef = useRef(null);

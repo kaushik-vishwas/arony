@@ -9,11 +9,11 @@ import e2 from "../assets/e2.JPG";
 import e3 from "../assets/e3.JPG";
 import e4 from "../assets/e4.jpg";
 import e5 from "../assets/e5.jpg";
-import e6 from "../assets/e6.jpeg";
+// import e6 from "../assets/e6.jpeg";
 import e7 from "../assets/e7.jpeg";
 import e8 from "../assets/e8.jpeg";
-import e9 from "../assets/e9.jpg";
-import e10 from "../assets/e10.jpeg";
+import e9 from "../assets/e9.jpeg";
+import e10 from "../assets/e10.jpg";
 
 const EventsSection = () => {
   return (
@@ -41,10 +41,22 @@ const EventsSection = () => {
 
           {/* Event Grid - 3 columns with full height images */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+
+
+             <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-white h-full">
+              <div className="h-full overflow-hidden">
+                <img 
+                  src={e7} 
+                  alt="Event" 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+              </div>
+              
+            </div>
             
           
 
-            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-white h-full">
+            {/* <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-white h-full">
               <div className="h-full overflow-hidden">
                 <img 
                   src={e6} 
@@ -53,7 +65,7 @@ const EventsSection = () => {
                 />
               </div>
               
-            </div>
+            </div> */}
 
             <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-white h-full">
               <div className="h-full overflow-hidden">
@@ -112,16 +124,7 @@ const EventsSection = () => {
               
             </div>
 
-            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-white h-full">
-              <div className="h-full overflow-hidden">
-                <img 
-                  src={e7} 
-                  alt="Event" 
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-              </div>
-              
-            </div>
+           
 
             <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-white h-full">
               <div className="h-full overflow-hidden">
