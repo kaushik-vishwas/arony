@@ -180,7 +180,7 @@ const Navbar = () => {
           <Link to="/blog" className="block px-4 py-2 hover:bg-gray-100">
             Blogs
           </Link>
-          <Link to="/" className="block px-4 py-2 hover:bg-gray-100">
+          <Link to="/events" className="block px-4 py-2 hover:bg-gray-100">
             Events
           </Link>
           <Link to="/career" className="block px-4 py-2 hover:bg-gray-100">
