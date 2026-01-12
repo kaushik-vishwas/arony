@@ -1,7 +1,7 @@
 import { Heading, Description, Badge, Section, SectionCol } from "../utils";
 import Video from "./Video";
 // import aboutmain from '../../assets/NewChanges/aboutUsImg.jpg';
-import aboutmain from "../../assets/testmango2.jpg";
+import aboutmain from "../../assets/testmango2.JPG";
 import leaf from "../../assets/leaf-grn.png";
 
 

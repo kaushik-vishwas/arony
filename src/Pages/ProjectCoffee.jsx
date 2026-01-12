@@ -37,7 +37,7 @@ const ProjectMango = () => { // Note: Component name is ProjectMango but content
             {/* <Location /> */}
             <AreaLayout />
             <Configration />
-            <Video faagContent={faagContent} />
+            {/* <Video faagContent={faagContent} /> */}
             <CropDetails />
             <Ownership />
             <Highlights />

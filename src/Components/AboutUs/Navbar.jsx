@@ -328,18 +328,7 @@ const Navbar = () => {
               >
                 The Mountain's Breath
               </Link>
-              <Link
-                to="/mango"
-                className="block px-6 py-3 text-gray-700 hover:bg-white/50 hover:text-green-600 transition-colors duration-200 border-b border-gray-100/50 text-sm"
-              >
-                Mango
-              </Link>
-              <Link
-                to="/coffee"
-                className="block px-6 py-3 text-gray-700 hover:bg-white/50 hover:text-green-600 transition-colors duration-200 text-sm"
-              >
-                Coffee
-              </Link>
+             
             </div>
           )}
 
