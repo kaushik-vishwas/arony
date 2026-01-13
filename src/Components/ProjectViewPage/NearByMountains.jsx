@@ -3,25 +3,17 @@ import leafgrn from "../../assets/leaf-grn.png";
 
 const NearBy = () => {
   const attractions = [
-    // 'Nearest Town / City: [Distance in km] - Sakleshpur-10km',
-    // 'Highways / Roads: [Connectivity details]-National Highway (NH-75)',
-    // 'Railway / Airport Access: [Nearest stations or airports]-Saklespur railway',
-    // 'Essential Services: Hospitals, schools, markets within [X] km-just 12 km from property',
-    // 'Tourist Attractions (optional): Manjarabad Fort-18km',
-
-    'Nearest Town / City Gangavathi -15km',
-    'Highways / Roads:-Hospet Highway',
-    'Railway / Airport Access: Gangavathi Railway Station/Huballi Airport',
-    'Essential Services: Hospitals, schools, markets within 5 km',
-    'Tourist Attractions: Hampi -35km and Anjanadri 25km'
-
-
+    'Nearest Town / City: Sakleshpur-10km',
+    'Highways / Roads: National Highway (NH-75)',
+    'Railway / Airport Access: Nearest stations or airports - Saklespur railway station',
+    'Essential Services: Hospitals, schools, markets within 5km-just 12km from property',
+    'Tourist Attractions: Manjarabad Fort-18km'
   ];
 
   return (
     <div className="bg-neutral-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
-        
+
         {/* Left Column - Title */}
         <div className="w-full lg:w-[40%] space-y-4">
           <div className="flex items-center gap-2 border border-gray-300 rounded-full px-4 py-2 hover:border-green-500 transition-colors w-fit">
@@ -38,7 +30,7 @@ const NearBy = () => {
           </h2>
         </div>
 
-       {/* Right Column - Attractions List */}
+        {/* Right Column - Attractions List */}
         <div className="w-full lg:w-[60%] space-y-4">
           {attractions.map((attraction, index) => (
             <div
@@ -51,30 +43,25 @@ const NearBy = () => {
             </div>
           ))}
 
-          {/* <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4 list-disc pl-5">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4 list-disc pl-5">
             <li className="text-[#585858] text-[18px] sm:text-lg font-medium">
-             Agani Gudda - 30KM
+             Bisle Beauty Point- 60
             </li>
             <li className="text-[#585858] text-[18px] sm:text-lg font-medium">
-              Hosahalli Betta- 35KM
+              Bettadabairaveshwara temple- 46
             </li>
             <li className="text-[#585858] text-[18px] sm:text-lg font-medium">
-             Kukke Subramanya- 67KM
+             Devaramane Betta-48
             </li>
             <li className="text-[#585858] text-[18px] sm:text-lg font-medium">
-             Dharmasthala- 84KM
+             Kaginere-40km
             </li>
-          </ul> */}
+          </ul>
         </div>
 
-        {/* console */}
 
-
-        
 
       </div>
-
-      
     </div>
   );
 };

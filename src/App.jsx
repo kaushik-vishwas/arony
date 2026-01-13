@@ -11,6 +11,7 @@ import ProjectPage from "./Pages/ProjectPage";
 import ProjectSandalwood from "./Pages/ProjectSandalwood";
 import ProjectMango from "./Pages/ProjectMango";
 import ProjectCoffee from "./Pages/ProjectCoffee";
+import ProjectMountains from "./Pages/ProjectMountains.jsx";
 import Coffee from "./Pages/Coffee";
 import Mango from "./Pages/Mango";
 import Blog from "./Pages/Blog";
@@ -53,7 +54,7 @@ export default function App() {
         <Route path="/project-page" element={<ProjectPage />} />
         <Route path="/project-mango" element={<ProjectMango />} />
         <Route path="/project-coffee-malnad-mist" element={<ProjectCoffee />} />
-        <Route path="/project-coffee-mountains-breath" element={<ProjectCoffee />} />
+        <Route path="/project-coffee-mountains-breath" element={<ProjectMountains />} />
         <Route path="/coffee" element={<Coffee />} />
         <Route path="/mango" element={<Mango />} />
         <Route path="/blog" element={<Blog />} />

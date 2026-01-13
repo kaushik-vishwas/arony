@@ -3,10 +3,11 @@ import leafgrn from "../../assets/leaf-grn.png";
 
 const NearBy = () => {
   const attractions = [
-    'Nearest Town / City: [Distance in km] - Sakleshpur-10km',
-    'Highways / Roads: [Connectivity details]-National Highway (NH-75)',
-    'Railway / Airport Access: [Nearest stations or airports]-Saklespur railway station',
-    'Essential Services: Hospitals, schools, markets within [X] km-just 12 km from property',
+    'Nearest Town / City: Sakleshpur-10km',
+    'Highways / Roads: National Highway (NH-75)',
+    'Railway / Airport Access: Nearest stations or airports - Saklespur railway station',
+    'Essential Services: Hospitals, schools, markets within 5km-just 12km from property',
+    'Tourist Attractions: Manjarabad Fort-18km'
   ];
 
   return (
@@ -44,16 +45,16 @@ const NearBy = () => {
 
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4 list-disc pl-5">
             <li className="text-[#585858] text-[18px] sm:text-lg font-medium">
-              Bisle Beauty Point - 60km
+              Agani Gudda - 30KM
             </li>
             <li className="text-[#585858] text-[18px] sm:text-lg font-medium">
-              Bettadabairaveshwara temple - 46km
+              Hosahalli Betta- 35KM
             </li>
             <li className="text-[#585858] text-[18px] sm:text-lg font-medium">
-              Devaramane Betta - 48km
+              Kukke Subramanya- 67KM
             </li>
             <li className="text-[#585858] text-[18px] sm:text-lg font-medium">
-              Kaginere - 40km
+             Dharmasthala- 84KM
             </li>
           </ul>
         </div>
