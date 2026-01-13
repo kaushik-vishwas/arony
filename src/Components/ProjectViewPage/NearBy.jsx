@@ -3,20 +3,16 @@ import leafgrn from "../../assets/leaf-grn.png";
 
 const NearBy = () => {
   const attractions = [
-    'Close to Lepakshi Temple and eco-tourism parks',
-    'Approximately 95 minutes from Bangalore International Airport',
-    'Key highways, towns like Chikkaballapur and tourist landmarks within 30-45 km',
-    'Access to restaurants, markets, healthcare, and hospitality facilities',
-    'Bangalore airport: 95-minute drive',
-    'Nearest town: 15 km',
-    'National highway: 10 km',
-    "Local markets, schools, and basic amenities: within 30 minutes' drive"
+    'Nearest Town / City: [Distance in km] - Sakleshpur-10km',
+    'Highways / Roads: [Connectivity details]-National Highway (NH-75)',
+    'Railway / Airport Access: [Nearest stations or airports]-Saklespur railway station',
+    'Essential Services: Hospitals, schools, markets within [X] km-just 12 km from property',
   ];
 
   return (
     <div className="bg-neutral-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
-        
+
         {/* Left Column - Title */}
         <div className="w-full lg:w-[40%] space-y-4">
           <div className="flex items-center gap-2 border border-gray-300 rounded-full px-4 py-2 hover:border-green-500 transition-colors w-fit">
@@ -45,7 +41,24 @@ const NearBy = () => {
               </p>
             </div>
           ))}
+
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4 list-disc pl-5">
+            <li className="text-[#585858] text-[18px] sm:text-lg font-medium">
+              Bisle Beauty Point - 60km
+            </li>
+            <li className="text-[#585858] text-[18px] sm:text-lg font-medium">
+              Bettadabairaveshwara temple - 46km
+            </li>
+            <li className="text-[#585858] text-[18px] sm:text-lg font-medium">
+              Devaramane Betta - 48km
+            </li>
+            <li className="text-[#585858] text-[18px] sm:text-lg font-medium">
+              Kaginere - 40km
+            </li>
+          </ul>
         </div>
+
+
 
       </div>
     </div>

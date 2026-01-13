@@ -3,11 +3,11 @@ import leafgrn from "../../assets/leaf-grn.png";
 
 const NearBy = () => {
   const attractions = [
-    'Nearest Town / City Gangavathi -15km',
-    'Highways / Roads:-Hospet Highway',
-    'Railway / Airport Access: Gangavathi Railway Station/Huballi Airport',
-    'Essential Services: Hospitals, schools, markets within 5 km',
-    'Tourist Attractions: Hampi -35km and Anjanadri 25km',
+    'Nearest Town / City: [Distance in km] - Sakleshpur-10km',
+    'Highways / Roads: [Connectivity details]-National Highway (NH-75)',
+    'Railway / Airport Access: [Nearest stations or airports]-Saklespur railway',
+    'Essential Services: Hospitals, schools, markets within [X] km-just 12 km from property',
+    'Tourist Attractions (optional): Manjarabad Fort-18km',
   ];
 
   return (
@@ -30,7 +30,7 @@ const NearBy = () => {
           </h2>
         </div>
 
-        {/* Right Column - Attractions List */}
+       {/* Right Column - Attractions List */}
         <div className="w-full lg:w-[60%] space-y-4">
           {attractions.map((attraction, index) => (
             <div
@@ -42,9 +42,29 @@ const NearBy = () => {
               </p>
             </div>
           ))}
+
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4 list-disc pl-5">
+            <li className="text-[#585858] text-[18px] sm:text-lg font-medium">
+             Agani Gudda - 30KM
+            </li>
+            <li className="text-[#585858] text-[18px] sm:text-lg font-medium">
+              Hosahalli Betta- 35KM
+            </li>
+            <li className="text-[#585858] text-[18px] sm:text-lg font-medium">
+             Kukke Subramanya- 67KM
+            </li>
+            <li className="text-[#585858] text-[18px] sm:text-lg font-medium">
+             Dharmasthala- 84KM
+            </li>
+          </ul>
         </div>
 
+
+        
+
       </div>
+
+      
     </div>
   );
 };
