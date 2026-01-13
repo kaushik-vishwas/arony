@@ -59,6 +59,8 @@ const NearBy = () => {
           </ul>
         </div>
 
+        {/* console */}
+
 
         
 
