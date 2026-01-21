@@ -173,6 +173,7 @@ import { ArrowUp } from 'lucide-react';
 import youtube from '../../assets/youtube.png';
 import instagram from '../../assets/instagram.png';
 import facebook from '../../assets/facebook.png';
+import linkedin from '../../assets/linkedin.png';
 import logo from '../../assets/logo2.png';
 
 const Footer = () => {
@@ -214,7 +215,7 @@ const Footer = () => {
     projects: [
       { name: 'Sandalwood', href: '/project-sandalwood' },
       { name: 'Mango', href: '/project-mango' },
-      { name: 'Coffee', href: '/project-coffee' },
+      { name: 'Coffee', href: '/project-coffee-malnad-mist' },
     ],
     information: [
       { name: 'Blog', href: '/blog' },
@@ -223,9 +224,10 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { name: 'Instagram', icon: instagram, href: '#' },
-    { name: 'YouTube', icon: youtube, href: '#' },
-    { name: 'Facebook', icon: facebook, href: '#' },
+    { name: 'Instagram', icon: instagram, href: 'https://www.instagram.com/aronygreenlands/#' },
+    { name: 'YouTube', icon: youtube, href: 'https://youtube.com/@arony-c4w?si=-iZ724MetB5cIHzE' },
+    { name: 'Facebook', icon: facebook, href: 'https://www.facebook.com/aronyfarms' },
+    { name: 'Linkedin', icon: linkedin, href: 'https://www.linkedin.com/company/109614050/admin/notifications/all/' },
   ];
 
   return (
