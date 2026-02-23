@@ -178,10 +178,9 @@ const GetInTouch = () => {
                   onChange={handleChange}
                   className="w-full px-4 py-3 text-[#585858]  rounded-lg focus:ring-2  focus:border-transparent outline-none transition-all bg-[#FAFAFA] "
                 >
-                  <option value="">Project 1</option>
-                  <option value="project2">Project 2</option>
-                  <option value="project3">Project 3</option>
-                  <option value="project4">Project 4</option>
+                  <option value="">The Hampi Highlands</option>
+                  <option value="project2">The Malnad Mist</option>
+                  <option value="project3">The Moundtain Breath</option>
                 </select>
               </div>
 
